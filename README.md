@@ -99,7 +99,7 @@ A pre-rendered, static copy of the teacher report output — published via GitHu
 <details>
 A tiny redirect page so the site's root URL lands on the report without needing to know its filename (see "Publishing to GitHub Pages" below).
 </details>
-### `.nojekyll`
+### `nojekyll`
 
 <details>
 
