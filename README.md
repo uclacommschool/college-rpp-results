@@ -15,7 +15,7 @@ All of the outcome definitions and calculation rules implemented here follow the
 - **One self-contained HTML report** combining both of the above behind a single cohort dropdown, styled with the UCLA Center for Community Schooling's branding, ready to email or post as a link.
 
 ## Data source (not included in this repo)
-
+<details>
 The pipeline reads a school's PSD export — a `.csv` synced via Box Drive — from a path like:
 
 ```
@@ -23,9 +23,10 @@ Box/College and Career RPP/1. NSC Dataset/<School>/<School> PSD/<date>-<school>-
 ```
 
 **No student data lives in this repo.** Each script points at a local Box-synced file path (see `psd_rfk`, `psd_mann`, `psd_demo` in the scripts) that you edit to match your machine and the school/snapshot you're reporting on. A synthetic demo file (`demo_psd_synthetic.csv`) is used as the active default so the scripts run out of the box without real student data.
+</details>
 
 ## How the pieces fit together
-
+<details>
 ```
 01-calculate-outcomes.R  →  the 4 outcome measures (tables, printed to console)
 02-sankey-pathways.R     →  the 2 Sankey diagrams (standalone, re-derives its own data)
@@ -37,6 +38,7 @@ Box/College and Career RPP/1. NSC Dataset/<School>/<School> PSD/<date>-<school>-
 ```
 
 `01` and `02` are independent — `02` does not source or depend on `01`; it re-reads and re-cleans the PSD itself so it can be run and tested on its own. `03` (R script) and `04` (Quarto document) are two different ways of building the *same* combined report: `03` assembles the HTML as one big string in R, while `04` is a Quarto file that's easier to open and hand-edit (prose, labels, colors) before re-rendering. Both source `01` and `02` into separate environments to avoid variable-name collisions, then read the resulting R objects directly rather than round-tripping through intermediate CSVs.
+</details>
 
 ## File-by-file breakdown
 <details>
