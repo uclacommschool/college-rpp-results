@@ -27,6 +27,7 @@ Box/College and Career RPP/1. NSC Dataset/<School>/<School> PSD/<date>-<school>-
 
 ## How the pieces fit together
 <details>
+
 ```
 01-calculate-outcomes.R  →  the 4 outcome measures (tables, printed to console)
 02-sankey-pathways.R     →  the 2 Sankey diagrams (standalone, re-derives its own data)
@@ -99,14 +100,18 @@ A pre-rendered, static copy of the teacher report output — published via GitHu
 A tiny redirect page so the site's root URL lands on the report without needing to know its filename (see "Publishing to GitHub Pages" below).
 </details>
 ### `.nojekyll`
+
 <details>
+
 An empty marker file at the repo root that tells GitHub Pages to skip Jekyll processing and serve the `docs/` folder's files as-is. Standard practice for publishing Quarto/static HTML output (recommended in [Quarto's own GitHub Pages guide](https://quarto.org/docs/publishing/github-pages.html)) — without it, GitHub's Jekyll build can silently ignore or mishandle generated files.
+
 </details>
 
 </details>
 
 ## Quick start
 <details>
+
 **Requirements:**
 - [R](https://www.r-project.org/) (any recent version)
 - R packages: `tidyverse`, `data.table`, `plotly`, `htmlwidgets`, `jsonlite`
